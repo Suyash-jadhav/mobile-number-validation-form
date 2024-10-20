@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width", initial-scale="1.0">
+        <title>Validation Form</title>
+        <style>
+            *{
+                box-sizing: border-box;
+            }
+            body{
+                background-color: #d3349e;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                height: 100vh;
+                overflow: hidden;
+                margin: 0;
+            }
+            form{
+                background: #fff;
+                display: flex;
+                flex-direction: column;
+                padding: 2vw 4vw;
+                width: 90;
+                max-width: 600px;
+                border-radius: 10px;
+            }
+            form input, form textarea{
+                border: 0;
+                margin: 10px 0;
+                padding: 20px;
+                outline: none;
+                background: #f5f5f5;
+                font-size: 16px;
+            }
+        </style>
+    </head>
+    <body>
+        <form onsubmit="return myfun()">
+            <h1>Mobile Number Validation</h1>
+            Mobile No: <input type="text" placeholder="Phone Number" id="phone number">
+            <br>
+            <br>
+            <span id="error"></span>
+            <br>
+            <br>
+           <input type="submit" value="submit" >
+        </form>
+        <script>
+            function myfun(){
+                var a=document.getElementById("phone number").value;
+                if(a==""){
+                    document.getElementById("error").innerHTML="please enter phone number";
+                    return false;
+                }
+                if(isNaN(a)){
+                    document.getElementById("error").innerHTML="only digits allowed";
+                    return false;
+                } 
+                if(a.length>10){
+                    document.getElementById("error").innerHTML="maximum limit is 10 digit";
+                    return false;
+                }
+                if(a.length<10){
+                document.getElementById("error").innerHTML="maximum limit is 10 digit";
+                    return false;
+                }
+                if(a.charAt(0==9))(a.charAt(0==7))
+                document.getElementById("error").innerHTML="starting number 9,7 allowed";
+                    return false;
+                    
+            }
+        </script>
+    </body>
+</html>
